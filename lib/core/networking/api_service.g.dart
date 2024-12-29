@@ -14,7 +14,7 @@ class _ApiService implements ApiService {
     this.baseUrl,
     this.errorLogger,
   }) {
-    baseUrl ??= 'https://stg.koueider.com/wp-json/apis/v2/';
+    baseUrl ??= 'https://api.escuelajs.co/api/v1/';
   }
 
   final Dio _dio;
@@ -43,7 +43,7 @@ class _ApiService implements ApiService {
     )
         .compose(
           _dio.options,
-          'products/filter',
+          'products',
           queryParameters: queryParameters,
           data: _data,
         )

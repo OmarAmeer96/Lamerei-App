@@ -8,11 +8,6 @@ class HomeCubit extends Cubit<HomeState> {
 
   HomeCubit(this._productsRepo) : super(const HomeState.initial());
 
-  int? minPrice;
-  int? maxPrice;
-  String? sortCriteria;
-  String? sortArrangement;
-
   int currentPage = 0;
   bool isLoadingMore = false;
   bool hasMoreProducts = true;

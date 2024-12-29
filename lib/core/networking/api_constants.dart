@@ -1,6 +1,6 @@
 class ApiConstants {
-  static const String apiBaseUrl = "https://stg.koueider.com/wp-json/apis/v2/";
-  static const String getProducts = "products/filter";
+  static const String apiBaseUrl = "https://api.escuelajs.co/api/v1/";
+  static const String getProducts = "products";
 }
 
 class ApiErrors {

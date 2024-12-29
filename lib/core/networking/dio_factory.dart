@@ -26,15 +26,6 @@ class DioFactory {
   static void addDioHeaders() async {
     dio?.options.headers = {
       'Accept': 'application/json',
-      // 'Authorization':
-      //     'Bearer ${await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken)}',
-    };
-  }
-
-  // This is to solve a problem that the [DioFactory] initializes with no token in the begginning, and after the login the token should be refreshed in the [DioFactory], the other part is in the [LoginCubit] file line 40.
-  static void setTokenAfterLogin(String token) {
-    dio?.options.headers = {
-      'Authorization': 'Bearer $token',
     };
   }
 
