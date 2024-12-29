@@ -21,25 +21,26 @@ class ProductItemImage extends StatelessWidget {
           placeholder: (context, url) => const Center(
             child: CircularProgressIndicator(),
           ),
-          imageUrl: product.category!.image![0],
+          imageUrl: product.images![0],
           fit: BoxFit.cover,
-          errorWidget: (context, url, error) => Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Icon(
-                  Icons.error_outline,
-                  size: 24,
-                ),
-                const SizedBox(
-                  height: 16,
-                ),
-                Text(
-                  "Couldn't Load the Image 😢",
-                  textAlign: TextAlign.center,
-                  style: Styles.font11BottomNavMedium,
-                ),
-              ],
+          errorWidget: (context, url, error) => Container(
+            color: Colors.grey[200],
+            child: Center(
+              child: Column(
+                spacing: 10,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Icon(
+                    Icons.error_outline,
+                    size: 24,
+                  ),
+                  Text(
+                    "Couldn't Load\nthe Image 😢",
+                    textAlign: TextAlign.center,
+                    style: Styles.font11BottomNavMedium,
+                  ),
+                ],
+              ),
             ),
           ),
         ),

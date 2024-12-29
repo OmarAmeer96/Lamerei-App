@@ -11,7 +11,7 @@ class HomeCubit extends Cubit<HomeState> {
   int currentPage = 0;
   bool isLoadingMore = false;
   bool hasMoreProducts = true;
-  List<Product> allProducts = [];
+  final List<Product> allProducts = [];
 
   void getProducts() async {
     currentPage = 0;
@@ -20,19 +20,17 @@ class HomeCubit extends Cubit<HomeState> {
     allProducts.clear();
 
     emit(const HomeState.loading());
+
     final response = await _productsRepo.getProducts(
       offset: currentPage,
       limit: 10,
     );
+
     response.when(
       success: (productsResponse) {
-        allProducts = productsResponse.products!;
-        hasMoreProducts = productsResponse.products!.isNotEmpty;
-        emit(
-          HomeState.success(
-            productsResponse.copyWith(products: allProducts),
-          ),
-        );
+        allProducts.addAll(productsResponse);
+        hasMoreProducts = productsResponse.length == 10; // Assume 10 is the limit per page
+        emit(HomeState.success(List.from(allProducts))); // Emit a copy of the list
       },
       failure: (error) {
         emit(
@@ -58,13 +56,9 @@ class HomeCubit extends Cubit<HomeState> {
     response.when(
       success: (productsResponse) {
         isLoadingMore = false;
-        hasMoreProducts = productsResponse.products!.isNotEmpty;
-        allProducts.addAll(productsResponse.products!);
-        emit(
-          HomeState.success(
-            productsResponse.copyWith(products: allProducts),
-          ),
-        );
+        hasMoreProducts = productsResponse.length == 10; // Check if more products exist
+        allProducts.addAll(productsResponse);
+        emit(HomeState.success(List.from(allProducts))); // Emit a copy of the updated list
       },
       failure: (error) {
         isLoadingMore = false;

@@ -69,7 +69,6 @@ class _HomeViewBodyState extends State<HomeView> {
                               success: (productsResponse) {
                                 return setupSuccessState(
                                   context,
-                                  productsResponse,
                                 );
                               },
                               error: (_) {

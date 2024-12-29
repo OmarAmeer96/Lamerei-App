@@ -7,8 +7,8 @@ import 'package:lamerei_app/core/theming/styles.dart';
 import 'package:lamerei_app/core/widgets/custom_fading_widget.dart';
 import 'package:lamerei_app/core/widgets/loading_item.dart';
 import 'package:lamerei_app/features/home/cubits/home_cubit/home_cubit.dart';
-import 'package:lamerei_app/features/home/data/models/products.dart';
 import 'package:lamerei_app/core/widgets/custom_home_item_loading_widget.dart';
+import 'package:lamerei_app/features/home/data/models/product.dart';
 import 'package:lamerei_app/features/home/presentation/widgets/product_item.dart';
 import 'package:lottie/lottie.dart';
 
@@ -23,7 +23,6 @@ Widget setupsLoadingState() {
 
 Widget setupSuccessState(
   BuildContext context,
-  Products productsResponse,
 ) {
   final cubit = context.read<HomeCubit>();
   return Column(
@@ -65,7 +64,7 @@ Widget setupErrorState(BuildContext context) {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          'حدث خطأ ما، يرجى المحاولة مرة أخرى',
+          'Something went wrong, please try again!',
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 20,
@@ -77,7 +76,7 @@ Widget setupErrorState(BuildContext context) {
           onPressed: () {
             context.read<HomeCubit>().getProducts();
           },
-          child: Text("إعادة المحاولة"),
+          child: Text("Retry"),
         ),
       ],
     ),
