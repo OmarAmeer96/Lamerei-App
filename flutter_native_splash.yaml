@@ -1,0 +1,8 @@
+flutter_native_splash:
+  # iOS & Android under 12:
+  color: "#FFFFFF"
+  image: assets/images/lamerei_splash_under_12.png.png
+
+  android_12:
+    color: "#FFFFFF"
+    image: assets/images/lamerei_splash_above_12.png
