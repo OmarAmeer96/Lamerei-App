@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:lamerei_app/core/helpers/assets.dart';
 import 'package:lamerei_app/core/helpers/spacing.dart';
-import 'package:lamerei_app/core/theming/styles.dart';
 import 'package:lamerei_app/features/home/data/models/product.dart';
 import 'package:lamerei_app/features/home/presentation/widgets/product_item_image.dart';
 import 'package:lamerei_app/features/home/presentation/widgets/product_item_points_widget.dart';

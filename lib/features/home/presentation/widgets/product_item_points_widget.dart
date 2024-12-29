@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:lamerei_app/core/helpers/assets.dart';
 import 'package:lamerei_app/core/helpers/spacing.dart';
-import 'package:lamerei_app/core/theming/styles.dart';
 
 class ProductItemPointsWidget extends StatelessWidget {
   const ProductItemPointsWidget({

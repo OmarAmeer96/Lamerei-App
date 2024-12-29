@@ -3,12 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lamerei_app/core/helpers/assets.dart';
 import 'package:lamerei_app/core/helpers/spacing.dart';
 import 'package:lamerei_app/core/theming/colors_manager.dart';
-import 'package:lamerei_app/core/theming/styles.dart';
 import 'package:lamerei_app/core/widgets/custom_fading_widget.dart';
 import 'package:lamerei_app/core/widgets/loading_item.dart';
 import 'package:lamerei_app/features/home/cubits/home_cubit/home_cubit.dart';
 import 'package:lamerei_app/core/widgets/custom_home_item_loading_widget.dart';
-import 'package:lamerei_app/features/home/data/models/product.dart';
 import 'package:lamerei_app/features/home/presentation/widgets/product_item.dart';
 import 'package:lottie/lottie.dart';
 
