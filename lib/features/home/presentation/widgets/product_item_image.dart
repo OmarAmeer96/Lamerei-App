@@ -16,7 +16,7 @@ class ProductItemImage extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(10),
       child: AspectRatio(
-        aspectRatio: 1 / 1,
+        aspectRatio: 1 / 1.2,
         child: CachedNetworkImage(
           placeholder: (context, url) => const Center(
             child: CircularProgressIndicator(),

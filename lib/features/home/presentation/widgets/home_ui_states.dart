@@ -7,6 +7,7 @@ import 'package:lamerei_app/core/widgets/custom_fading_widget.dart';
 import 'package:lamerei_app/core/widgets/loading_item.dart';
 import 'package:lamerei_app/features/home/cubits/home_cubit/home_cubit.dart';
 import 'package:lamerei_app/core/widgets/custom_home_item_loading_widget.dart';
+import 'package:lamerei_app/features/home/presentation/widgets/home_section_header.dart';
 import 'package:lamerei_app/features/home/presentation/widgets/product_item.dart';
 import 'package:lottie/lottie.dart';
 
@@ -26,6 +27,8 @@ Widget setupSuccessState(
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
+      HomeSectionHeader(title: 'All Products'),
+      verticalSpace(20),
       if (cubit.allProducts.isNotEmpty)
         ...cubit.allProducts.map(
           (product) => ProductItem(

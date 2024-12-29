@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:lamerei_app/core/helpers/assets.dart';
 import 'package:lamerei_app/core/helpers/spacing.dart';
 
 class CustomHomeAppBar extends StatelessWidget {
@@ -11,13 +13,18 @@ class CustomHomeAppBar extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 40, left: 10, right: 2),
+          padding: const EdgeInsets.only(top: 40, left: 2, right: 10),
           child: Row(
             children: [
               IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.arrow_back_ios),
-                // SvgPicture.asset(SvgAssets.homeBackIcon),
+                icon: Transform(
+                  alignment: Alignment.center,
+                  transform: Matrix4.rotationY(3.14),
+                  child: SvgPicture.asset(
+                    SvgAssets.homeBackIcon,
+                  ),
+                ),
               ),
               Container(
                 // height: 46,
@@ -35,47 +42,52 @@ class CustomHomeAppBar extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "استلام من",
-                          // style: Styles.font11AppBarBold,
+                          "Pickup from",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 14,
+                          ),
                         ),
-                        // Row(
-                        //   children: [
-                        //     SvgPicture.asset(
-                        //       SvgAssets.homeLocationIcon,
-                        //     ),
-                        //     horizontalSpace(4),
-                        //     Text(
-                        //       "فرع مول العرب",
-                        //       style: Styles.font12AppBarSemiBold,
-                        //     ),
-                        //     horizontalSpace(16),
-                        //     SvgPicture.asset(
-                        //       SvgAssets.homeDropDownIcon,
-                        //       width: 16,
-                        //     ),
-                        //   ],
-                        // ),
+                        Row(
+                          children: [
+                            SvgPicture.asset(
+                              SvgAssets.homeLocationIcon,
+                            ),
+                            horizontalSpace(4),
+                            Text(
+                              "Mall of Arabia Branch",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                fontSize: 12,
+                              ),
+                            ),
+                            horizontalSpace(16),
+                            SvgPicture.asset(
+                              SvgAssets.homeDropDownIcon,
+                              width: 16,
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                   ],
                 ),
               ),
               Spacer(),
-              IconButton(
-                onPressed: () {},
-                icon: Container(
-                  // width: 42,
-                  // height: 42,
+              InkWell(
+                onTap: () {},
+                splashColor: Colors.grey,
+                child: Container(
+                  width: 42,
+                  height: 42,
                   padding: const EdgeInsets.all(8),
                   decoration: ShapeDecoration(
                     color: Colors.white,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(8),
                     ),
                   ),
-                  // child: Center(
-                  //   child: SvgPicture.asset(SvgAssets.homeSearchIcon),
-                  // ),
+                  child: SvgPicture.asset(SvgAssets.homeSearchIcon),
                 ),
               ),
             ],

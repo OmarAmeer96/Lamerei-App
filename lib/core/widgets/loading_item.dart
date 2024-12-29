@@ -12,9 +12,9 @@ class LoadingItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
-            flex: 5,
+            flex: 4,
             child: Container(
-              height: 160.h,
+              height: 180.h,
               decoration: BoxDecoration(
                 color: Colors.grey[300],
                 borderRadius: BorderRadius.circular(10.r),

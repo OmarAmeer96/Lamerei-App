@@ -46,7 +46,8 @@ class _HomeViewBodyState extends State<HomeView> {
           context.read<HomeCubit>().getProducts();
         },
         child: Container(
-          color: Colors.white,
+          // color: Colors.white,
+          color: Color(0xFFf5f5f5),
           child: Stack(
             children: [
               Column(
