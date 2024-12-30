@@ -24,7 +24,7 @@ class SuccessMobileLayout extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         HomeSectionHeader(title: 'All Products'),
-        verticalSpace(20),
+        verticalSpace(10),
         if (cubit.allProducts.isNotEmpty)
           ...cubit.allProducts.map(
             (product) => ProductItem(

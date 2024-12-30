@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shimmer/shimmer.dart';
 
 class LoadingItem extends StatelessWidget {
   const LoadingItem({super.key});
@@ -9,82 +10,77 @@ class LoadingItem extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(bottom: 30.h),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
-            flex: 4,
-            child: Container(
-              height: 180.h,
-              decoration: BoxDecoration(
-                color: Colors.grey[300],
-                borderRadius: BorderRadius.circular(10.r),
+            flex: 5,
+            child: Shimmer.fromColors(
+              baseColor: Colors.grey[500]!,
+              highlightColor: Colors.grey[200]!,
+              child: AspectRatio(
+                aspectRatio: 1 / 1.3,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.grey[500],
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                ),
               ),
             ),
           ),
           SizedBox(width: 13.w),
           Expanded(
-            flex: 6,
+            flex: 8,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 12.h),
-                Container(
-                  width: 150.w,
-                  height: 15.h,
-                  color: Colors.grey[300],
-                ),
-                SizedBox(height: 10.h),
-                Container(
-                  width: 80.w,
-                  height: 10.h,
-                  color: Colors.grey[300],
+                Shimmer.fromColors(
+                  baseColor: Colors.grey[500]!,
+                  highlightColor: Colors.grey[200]!,
+                  child: Container(
+                    width: 100.w,
+                    height: 20.h,
+                    color: Colors.grey[500],
+                  ),
                 ),
                 SizedBox(height: 6.h),
-                Row(
-                  children: [
-                    Container(
-                      width: 20.w,
-                      height: 20.h,
-                      decoration: BoxDecoration(
-                        color: Colors.grey[300],
-                        shape: BoxShape.circle,
-                      ),
-                    ),
-                    SizedBox(width: 5.w),
-                    Container(
-                      width: 70.w,
-                      height: 10.h,
-                      color: Colors.grey[300],
-                    ),
-                  ],
+                Shimmer.fromColors(
+                  baseColor: Colors.grey[500]!,
+                  highlightColor: Colors.grey[200]!,
+                  child: Container(
+                    width: 140.w,
+                    height: 20.h,
+                    color: Colors.grey[500],
+                  ),
                 ),
                 SizedBox(height: 10.h),
-                Row(
-                  children: [
-                    Container(
-                      width: 80.w,
-                      height: 15.h,
-                      color: Colors.grey[300],
-                    ),
-                    SizedBox(width: 10.w),
-                    Container(
-                      width: 40.w,
-                      height: 15.h,
-                      color: Colors.grey[300],
-                    ),
-                  ],
+                Shimmer.fromColors(
+                  baseColor: Colors.grey[500]!,
+                  highlightColor: Colors.grey[200]!,
+                  child: Container(
+                    width: 50.w,
+                    height: 15.h,
+                    color: Colors.grey[500],
+                  ),
                 ),
-                SizedBox(height: 12.h),
-                Row(
-                  children: [
-                    Container(
-                      width: 50.w,
-                      height: 15.h,
-                      color: Colors.grey[300],
+                SizedBox(height: 10.h),
+                Shimmer.fromColors(
+                  baseColor: Colors.grey[500]!,
+                  highlightColor: Colors.grey[200]!,
+                  child: Row(
+                    children: List.generate(
+                      3,
+                      (index) => Padding(
+                        padding: EdgeInsets.only(right: 8.w),
+                        child: Container(
+                          width: 30.w,
+                          height: 15.h,
+                          color: Colors.grey[500],
+                        ),
+                      ),
                     ),
-                  ],
+                  ),
                 ),
-                SizedBox(height: 12.h),
               ],
             ),
           ),
