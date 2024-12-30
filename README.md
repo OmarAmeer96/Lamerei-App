@@ -165,7 +165,7 @@ Lamerei App is a Flutter-based mobile application designed to showcase a list of
 5. **Build for Production**:
 
    ```bash
-   flutter build apk --release
+   flutter build apk --release -t lib/main_production.dart --flavor production
    ```
 
 6. **Distribute via Firebase**:
