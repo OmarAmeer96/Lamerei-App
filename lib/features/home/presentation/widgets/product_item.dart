@@ -88,7 +88,9 @@ class ProductItem extends StatelessWidget {
                         padding:
                             EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                         decoration: BoxDecoration(
-                          border: Border.all(color: Colors.grey),
+                          border: Border.all(
+                            color: Color(0xB2425486),
+                          ),
                           borderRadius: BorderRadius.circular(30),
                         ),
                         child: Text(
@@ -102,7 +104,9 @@ class ProductItem extends StatelessWidget {
                         padding:
                             EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                         decoration: BoxDecoration(
-                          border: Border.all(color: Colors.grey),
+                          border: Border.all(
+                            color: Color(0xB2425486),
+                          ),
                           borderRadius: BorderRadius.circular(30),
                         ),
                         child: Text(
@@ -116,7 +120,9 @@ class ProductItem extends StatelessWidget {
                         padding:
                             EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                         decoration: BoxDecoration(
-                          border: Border.all(color: Colors.grey),
+                          border: Border.all(
+                            color: Color(0xB2425486),
+                          ),
                           borderRadius: BorderRadius.circular(30),
                         ),
                         child: Text(
