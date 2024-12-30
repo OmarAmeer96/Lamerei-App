@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "107049164080",
+    "project_id": "lamerei",
+    "storage_bucket": "lamerei.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:107049164080:android:023e10cddf0c2b81de3cf5",
+        "android_client_info": {
+          "package_name": "com.example.lamerei_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSOFf2fxV1d7mWKaSe-Bx6So7nVLEOxik"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
