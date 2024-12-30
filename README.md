@@ -173,9 +173,9 @@ Lamerei App is a Flutter-based mobile application designed to showcase a list of
 
 ### Mobile View 📱
 
-| Splash Screen             | Loading                   | Home Screen               |
-| ------------------------- | ------------------------- | ------------------------- |
-| <img src="" width="200"/> | <img src="" width="200"/> | <img src="" width="200"/> |
+| Splash Screen             | Loading                   | Home Screen               | Error Screen              |
+| ------------------------- | ------------------------- | ------------------------- | ------------------------- |
+| <img src="" width="200"/> | <img src="" width="200"/> | <img src="" width="200"/> | <img src="" width="200"/> |
 
 ### Tablet View 📟
 
