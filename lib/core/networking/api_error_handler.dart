@@ -1,8 +1,9 @@
+// ignore_for_file: constant_identifier_names, non_constant_identifier_names
+
 import 'package:dio/dio.dart';
 import 'package:lamerei_app/core/networking/api_error_model.dart';
 import 'api_constants.dart';
 
-// TODO: wallahy I will refactor this .. Omar Ahmed
 enum DataSource {
   NO_CONTENT,
   BAD_REQUEST,

@@ -5,7 +5,6 @@ import 'package:lamerei_app/core/theming/colors_manager.dart';
 import 'package:lamerei_app/core/widgets/custom_fading_widget.dart';
 import 'package:lamerei_app/features/home/cubits/home_cubit/home_cubit.dart';
 import 'package:lamerei_app/core/widgets/custom_home_item_loading_widget.dart';
-import 'package:lamerei_app/features/home/presentation/layouts/success_desktop_layout.dart';
 import 'package:lamerei_app/features/home/presentation/layouts/success_mobile_layout.dart';
 import 'package:lamerei_app/features/home/presentation/layouts/success_tablet_layout.dart';
 
@@ -24,13 +23,7 @@ Widget setupSuccessState(
   final cubit = context.read<HomeCubit>();
   return LayoutBuilder(
     builder: (context, constraints) {
-      if (constraints.maxWidth >= 800) {
-        // Desktop Layout
-        return SuccessDesktopLayout(
-          cubit: cubit,
-          layoutType: 'd',
-        );
-      } else if (constraints.maxWidth >= 600) {
+      if (constraints.maxWidth >= 600) {
         // Tablet Layout
         return SuccessTabletLayout(
           cubit: cubit,

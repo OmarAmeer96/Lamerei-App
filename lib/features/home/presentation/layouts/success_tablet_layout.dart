@@ -60,6 +60,7 @@ class SuccessTabletLayout extends StatelessWidget {
               child: LoadingItem(),
             ),
           ),
+        verticalSpace(20),
       ],
     );
   }
