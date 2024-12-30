@@ -24,11 +24,13 @@ Lamerei App is a Flutter-based mobile application designed to showcase a list of
 - **Name**: Product name.
 - **Photo**: Product image.
 - **Price**: Product price.
+- **Rating**: Product rating.
 
 ### API Integration
 
-- **API**: Fake API
+- **API**: Fake API, The API URL is `https://api.escuelajs.co/api/v1/products`.
 - **Fetch**: Fetch the product list from this API and parse the response to display the required details.
+- **Pagination**: Implement pagination to load more products as the user scrolls down.
 
 ### Loading State
 
@@ -139,7 +141,7 @@ Lamerei App is a Flutter-based mobile application designed to showcase a list of
 1. **Clone the Repository**:
 
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/OmarAmeer96/Lamerei-App.git
    ```
 
 2. **Install Dependencies**:
@@ -173,14 +175,14 @@ Lamerei App is a Flutter-based mobile application designed to showcase a list of
 
 ### Mobile View 📱
 
-| Splash Screen             | Loading                   | Home Screen               | Error Screen              |
-| ------------------------- | ------------------------- | ------------------------- | ------------------------- |
+| Splash Screen                                                                                            | Loading                                                                                                  | Home Screen                                                                                              | Error Screen                                                                                             |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | <img src="https://github.com/user-attachments/assets/12d2a7ce-e703-464b-b323-e8fd883440d2" width="200"/> | <img src="https://github.com/user-attachments/assets/fa5439e7-b07f-4ffe-918a-72325b570962" width="200"/> | <img src="https://github.com/user-attachments/assets/4d6c1e93-c3eb-4413-8e35-5b583e912670" width="200"/> | <img src="https://github.com/user-attachments/assets/462b7fcc-fb93-46b8-af77-5506b8901b2a" width="200"/> |
 
 ### Tablet View 📟
 
-| Home Screen               |
-| ------------------------- |
+| Home Screen                                                                                              |
+| -------------------------------------------------------------------------------------------------------- |
 | <img src="https://github.com/user-attachments/assets/c39e1f32-53ac-4671-a338-6fca8685df42" width="200"/> |
 
 ### App Demo 🎥
