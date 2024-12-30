@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lamerei_app/core/helpers/spacing.dart';
+import 'package:lamerei_app/core/theming/styles.dart';
 import 'package:lamerei_app/features/home/data/models/product.dart';
 import 'package:lamerei_app/features/home/presentation/widgets/product_item_image.dart';
 import 'package:lamerei_app/features/home/presentation/widgets/product_item_points_widget.dart';
@@ -27,7 +29,7 @@ class ProductItem extends StatelessWidget {
           ),
           horizontalSpace(13),
           Expanded(
-            flex: 6,
+            flex: 7,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -35,50 +37,55 @@ class ProductItem extends StatelessWidget {
                 Row(
                   children: [
                     Expanded(
-                      child: Text(
-                        product.title!,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        // style: Styles.font17ProductItemBold,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "LAMEREI",
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: Styles.font17ProductTitle.copyWith(
+                              fontWeight: FontWeight.w900,
+                              letterSpacing: 1.5,
+                            ),
+                          ),
+                          verticalSpace(4),
+                          Text(
+                            product.title!,
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: Styles.font17ProductTitle,
+                          ),
+                        ],
                       ),
                     ),
                   ],
                 ),
-                verticalSpace(10),
-                Text(
-                  "250 جم",
-                  // style: Styles.font13ProductItemweight,
-                ),
                 verticalSpace(6),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    // SvgPicture.asset(
-                    //   SvgAssets.homeUsersIcon,
-                    // ),
-                    horizontalSpace(5),
-                    Column(
-                      children: [
-                        verticalSpace(5),
-                        Text(
-                          "8-7 أفراد",
-                          // style: Styles.font13ProductItemweight.copyWith(
-                          //   fontSize: 14.sp,
-                          // ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                verticalSpace(20),
                 Row(
                   children: [
                     Text(
-                      "EGP ${product.price}",
-                      // style: Styles.font22ProductItemPrice,
+                      "\$${product.price}",
+                      style: Styles.font16ProductPrice,
                     ),
-                    horizontalSpace(10),
-                    ProductItemPointsWidget(),
+                  ],
+                ),
+                verticalSpace(12),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.star,
+                      color: Colors.amber[700],
+                      size: 16,
+                    ),
+                    SizedBox(width: 4),
+                    Text(
+                      "4.8 ratings",
+                      style: Styles.font16ProductPrice.copyWith(
+                        color: Colors.black,
+                        fontSize: 14.sp,
+                      ),
+                    ),
                   ],
                 ),
               ],
