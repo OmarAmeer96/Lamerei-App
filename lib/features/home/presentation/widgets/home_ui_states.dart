@@ -52,7 +52,7 @@ Widget setupErrorState(BuildContext context) {
       children: [
         Icon(
           Icons.error,
-          size: 100,
+          size: 50,
           color: ColorsManager.primaryColor,
         ),
         verticalSpace(4),
