@@ -17,7 +17,7 @@ class ProductItemImage extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(4),
       child: AspectRatio(
-        aspectRatio: 1 / 1.2,
+        aspectRatio: 1 / 1.25,
         child: CachedNetworkImage(
           placeholder: (context, url) => Container(
             color: Colors.grey[200],
