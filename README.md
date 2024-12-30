@@ -175,17 +175,17 @@ Lamerei App is a Flutter-based mobile application designed to showcase a list of
 
 | Splash Screen             | Loading                   | Home Screen               | Error Screen              |
 | ------------------------- | ------------------------- | ------------------------- | ------------------------- |
-| <img src="" width="200"/> | <img src="" width="200"/> | <img src="" width="200"/> | <img src="" width="200"/> |
+| <img src="https://github.com/user-attachments/assets/12d2a7ce-e703-464b-b323-e8fd883440d2" width="200"/> | <img src="https://github.com/user-attachments/assets/fa5439e7-b07f-4ffe-918a-72325b570962" width="200"/> | <img src="https://github.com/user-attachments/assets/4d6c1e93-c3eb-4413-8e35-5b583e912670" width="200"/> | <img src="https://github.com/user-attachments/assets/462b7fcc-fb93-46b8-af77-5506b8901b2a" width="200"/> |
 
 ### Tablet View 📟
 
 | Home Screen               |
 | ------------------------- |
-| <img src="" width="200"/> |
+| <img src="https://github.com/user-attachments/assets/c39e1f32-53ac-4671-a338-6fca8685df42" width="200"/> |
 
 ### App Demo 🎥
 
-[Watch the video here]()
+[Watch the video here](https://github.com/user-attachments/assets/69c9fb05-e107-433d-b319-9be0a83f9f68)
 
 ## Usage 📱
 
