@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lamerei_app/core/helpers/assets.dart';
 import 'package:lamerei_app/core/helpers/spacing.dart';
 import 'package:lamerei_app/core/theming/colors_manager.dart';
 import 'package:lamerei_app/core/widgets/custom_fading_widget.dart';
-import 'package:lamerei_app/core/widgets/loading_item.dart';
 import 'package:lamerei_app/features/home/cubits/home_cubit/home_cubit.dart';
 import 'package:lamerei_app/core/widgets/custom_home_item_loading_widget.dart';
-import 'package:lamerei_app/features/home/presentation/widgets/home_section_header.dart';
-import 'package:lamerei_app/features/home/presentation/widgets/product_item.dart';
-import 'package:lottie/lottie.dart';
+import 'package:lamerei_app/features/home/presentation/layouts/success_desktop_layout.dart';
+import 'package:lamerei_app/features/home/presentation/layouts/success_mobile_layout.dart';
+import 'package:lamerei_app/features/home/presentation/layouts/success_tablet_layout.dart';
 
 Widget setupsLoadingState() {
   return const CustomFadingWidget(
@@ -24,33 +22,28 @@ Widget setupSuccessState(
   BuildContext context,
 ) {
   final cubit = context.read<HomeCubit>();
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      HomeSectionHeader(title: 'All Products'),
-      verticalSpace(20),
-      if (cubit.allProducts.isNotEmpty)
-        ...cubit.allProducts.map(
-          (product) => ProductItem(
-            product: product,
-            isLastItem: product == cubit.allProducts.last,
-          ),
-        ),
-      if (cubit.allProducts.isEmpty)
-        Align(
-          alignment: Alignment.center,
-          child: Lottie.asset(
-            JsonAssets.noProductsFound,
-          ),
-        ),
-      if (cubit.isLoadingMore)
-        const CustomFadingWidget(
-          child: Padding(
-            padding: EdgeInsets.only(top: 16),
-            child: LoadingItem(),
-          ),
-        ),
-    ],
+  return LayoutBuilder(
+    builder: (context, constraints) {
+      if (constraints.maxWidth >= 800) {
+        // Desktop Layout
+        return SuccessDesktopLayout(
+          cubit: cubit,
+          layoutType: 'd',
+        );
+      } else if (constraints.maxWidth >= 600) {
+        // Tablet Layout
+        return SuccessTabletLayout(
+          cubit: cubit,
+          layoutType: 't',
+        );
+      } else {
+        // Mobile Layout
+        return SuccessMobileLayout(
+          cubit: cubit,
+          layoutType: 'm',
+        );
+      }
+    },
   );
 }
 
@@ -64,6 +57,12 @@ Widget setupErrorState(BuildContext context) {
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        Icon(
+          Icons.error,
+          size: 100,
+          color: ColorsManager.primaryColor,
+        ),
+        verticalSpace(4),
         Text(
           'Something went wrong, please try again!',
           textAlign: TextAlign.center,

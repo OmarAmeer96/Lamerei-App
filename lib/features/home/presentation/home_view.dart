@@ -46,7 +46,6 @@ class _HomeViewBodyState extends State<HomeView> {
           context.read<HomeCubit>().getProducts();
         },
         child: Container(
-          // color: Colors.white,
           color: Color(0xFFf5f5f5),
           child: Stack(
             children: [
@@ -56,7 +55,6 @@ class _HomeViewBodyState extends State<HomeView> {
                   Expanded(
                     child: SingleChildScrollView(
                       controller: _scrollController,
-                      // physics: const BouncingScrollPhysics(),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: BlocBuilder<HomeCubit, HomeState>(

@@ -8,16 +8,18 @@ class ProductItemImage extends StatelessWidget {
   const ProductItemImage({
     super.key,
     required this.product,
+    required this.layoutType,
   });
 
   final Product product;
+  final String layoutType;
 
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(4),
       child: AspectRatio(
-        aspectRatio: 1 / 1.25,
+        aspectRatio: layoutType == 'm' ? 1 / 1.3 : 1.3 / 1,
         child: CachedNetworkImage(
           placeholder: (context, url) => Container(
             color: Colors.grey[200],

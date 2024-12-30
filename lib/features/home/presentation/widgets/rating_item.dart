@@ -5,7 +5,10 @@ import 'package:lamerei_app/core/theming/styles.dart';
 class RatingItem extends StatelessWidget {
   const RatingItem({
     super.key,
+    required this.layoutType,
   });
+
+  final String layoutType;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +24,7 @@ class RatingItem extends StatelessWidget {
           "4.8 ratings",
           style: Styles.font14ProductPrice.copyWith(
             color: Colors.black,
-            fontSize: 14.sp,
+            fontSize: layoutType == 'm' ? 14.sp : 6.sp,
           ),
         ),
       ],
