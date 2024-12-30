@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:lamerei_app/core/theming/styles.dart';
+import 'package:lamerei_app/core/helpers/parse_images.dart';
 import 'package:lamerei_app/features/home/data/models/product.dart';
 
 class ProductItemImage extends StatelessWidget {
@@ -21,23 +21,26 @@ class ProductItemImage extends StatelessWidget {
           placeholder: (context, url) => const Center(
             child: CircularProgressIndicator(),
           ),
-          imageUrl: product.images![0],
+          imageUrl: parseImages(product.images)?[0] ?? "",
           fit: BoxFit.cover,
           errorWidget: (context, url, error) => Container(
             color: Colors.grey[200],
             child: Center(
               child: Column(
-                spacing: 10,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Icon(
                     Icons.error_outline,
                     size: 24,
                   ),
+                  const SizedBox(height: 10),
                   Text(
-                    "Couldn't Load\nthe Image 😢",
+                    "No Image\nAvailable 😢",
                     textAlign: TextAlign.center,
-                    style: Styles.font11BottomNavMedium,
+                    style: TextStyle(
+                      color: Color(0xB2425486),
+                      fontSize: 12,
+                    ),
                   ),
                 ],
               ),
